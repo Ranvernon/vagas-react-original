@@ -1,6 +1,7 @@
-function VagasCard(
-   
-{        empresa,
+import { Link } from "react-router"
+function VagasCard({ 
+        id,       
+        empresa,
         cargo,
         salario,
         modelo,
@@ -18,8 +19,8 @@ function VagasCard(
                       <span className="card__badge">{modelo}</span>
                   </div>
                   <div className="card__actions">
-                      <span>2h</span>
-                      <a href="">candidatar-se</a>
+                      <span>{publicado}</span>
+                      <Link to={`/vaga/${id}`}>candidatar-se</Link>
                   </div>
               </div>
     )
