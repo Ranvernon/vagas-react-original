@@ -5,7 +5,7 @@ function VagaDetalhe() {
 
     console.log("vagaList", vagaList)
 
-    const vagaSelecionada = vagaList.filter(item => {
+    const vagasLoop = vagaList.filter(item => {
         console.log('Item', item)
         return item.id === Number(id)
         
@@ -19,10 +19,18 @@ function VagaDetalhe() {
             </div>
         )
     }
+
+    const vagaSelecionada = vagasLoop[0];
     return(
         <div>
             <h1>Detalhe da Vaga {id}</h1>
-            <p>Informações sobere a vaga selecionada</p>
+            <h3>{vagaSelecionada.cargo}</h3>
+            <h3>{vagaSelecionada.empresa}</h3>
+            <h3>{vagaSelecionada.cargo}</h3>
+            <h3>{vagaSelecionada.salario}</h3>
+            <h3>{vagaSelecionada.modelo}</h3>
+            <h3>{vagaSelecionada.area}</h3>
+            <h3>{vagaSelecionada.publicado}</h3>
         </div>
 
     )
