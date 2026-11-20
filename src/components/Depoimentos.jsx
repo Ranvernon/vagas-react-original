@@ -1,24 +1,16 @@
+import depoimentosList from '../data/depoimentos.js'
+
 function Depoimentos() {
     return (
         <div className="depoimentos">
-              <div>
-                  <p>Encontrei minha vaga atual scrollando num sábado.Aplicação em dois cliques</p>
-                  <span>Lucas Vergara</span>
-                  <span>Software enginner - SATC</span>
-              </div>
-      
-              <div>
-                  <p>Encontrei minha vaga atual scrollando num sábado.Aplicação em dois cliques</p>
-                  <span>Lucas Vergara</span>
-                  <span>Software enginner - SATC</span>
-              </div>
-      
-              <div>
-                  <p>Encontrei minha vaga atual scrollando num sábado.Aplicação em dois cliques</p>
-                  <span>Lucas Vergara</span>
-                  <span>Software enginner - SATC</span>
-              </div>
-          </div>
+            {depoimentosList.map((item) => (
+                <div key={item.id}>
+                    <p>{item.texto}</p>
+                    <span>{item.nome}</span>
+                    <span>{item.cargo}</span>
+                </div>
+            ))}
+        </div>
     )
 }
 

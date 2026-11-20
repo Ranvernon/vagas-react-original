@@ -12,7 +12,7 @@ function VagaDetalhe() {
 
     });
 
-    if (vagasLoop.lenght === 0) {
+    if (vagasLoop.length === 0) {
         return (
             <div>
                 <h1>Vaga com ID {id} não encontrada</h1>
