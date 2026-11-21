@@ -10,7 +10,7 @@ function VagasCard({
     return (
         <div className="card">
                   <div className="card__avatar card__avatar--grey">
-                      V
+                      {empresa[0]}
                   </div>
                   <div className="card__text">
                       <p>{empresa}</p>
