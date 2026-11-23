@@ -6,6 +6,9 @@ const tiposDeVaga = [...new Set(vagaList.map((vaga) => vaga.modelo))]
 const areasDeVaga = [...new Set(vagaList.map((vaga) => vaga.area))]
 const locaisDeVaga = [...new Set(vagaList.map((vaga) => vaga.local))]
 
+// Quantas vagas aparecem em cada página
+const VAGAS_POR_PAGINA = 5
+
 
 function Vagas() {
     const [tipos, setTipos] = useState([])
@@ -13,8 +16,10 @@ function Vagas() {
     const [locais, setLocais] = useState([])
     const [busca, setBusca] = useState('')
     const [mostrarAlerta, setMostrarAlerta] = useState(false)
-    
+    const [pagina, setPagina] = useState(1)
+
     function alternar(lista, setLista, valor) {
+        setPagina(1) // filtro mudou: volta para a primeira página
         if (lista.includes(valor)) {
             setLista(lista.filter((item) => item !== valor))
         } else {
@@ -28,6 +33,7 @@ function Vagas() {
         setAreas([])
         setLocais([])
         setBusca('')
+        setPagina(1)
         setMostrarAlerta(true)
         setTimeout(() => setMostrarAlerta(false), 2000)
     }
@@ -47,6 +53,11 @@ function Vagas() {
         return passaTipo && passaArea && passaLocal && passaBusca
     })
 
+    // Paginação: pega só o pedaço da lista que pertence à página atual
+    const totalPaginas = Math.max(1, Math.ceil(vagasFiltradas.length / VAGAS_POR_PAGINA))
+    const inicio = (pagina - 1) * VAGAS_POR_PAGINA
+    const vagasDaPagina = vagasFiltradas.slice(inicio, inicio + VAGAS_POR_PAGINA)
+
 
     return(
         <>
@@ -57,17 +68,20 @@ function Vagas() {
               </div>
 
               <input
-                  className="form__input"
+                  className="form__input busca"
                   type="search"
                   placeholder="Buscar por cargo ou empresa..."
                   value={busca}
-                  onChange={(e) => setBusca(e.target.value)}
+                  onChange={(e) => {
+                      setBusca(e.target.value)
+                      setPagina(1)
+                  }}
               />
 
-              {vagasFiltradas.length === 0 && <p>Nenhuma vaga encontrada.</p>}
+              {vagasFiltradas.length === 0 && <p className="vazio">Nenhuma vaga encontrada.</p>}
 
               {
-                vagasFiltradas.map((vaga) => (
+                vagasDaPagina.map((vaga) => (
                     <VagasCard
                     id={vaga.id}
                     key={vaga.id}
@@ -79,6 +93,28 @@ function Vagas() {
                     />
                 ))
                 }
+
+              {totalPaginas > 1 && (
+                  <div className="paginacao">
+                      <button
+                          className="btn btn--claro"
+                          onClick={() => setPagina(pagina - 1)}
+                          disabled={pagina === 1}
+                      >
+                          ← Anterior
+                      </button>
+
+                      <span>Página {pagina} de {totalPaginas}</span>
+
+                      <button
+                          className="btn"
+                          onClick={() => setPagina(pagina + 1)}
+                          disabled={pagina === totalPaginas}
+                      >
+                          Próxima →
+                      </button>
+                  </div>
+              )}
 
           </main>
 
