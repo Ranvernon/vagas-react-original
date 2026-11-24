@@ -398,3 +398,39 @@ footer nav{
     background-color: #ffffff;
     color: #bbbbbb;
 }
+
+
+/*  Botão que é Link (Publicar Vaga)  */
+a.btn{
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Formulário Publicar Vaga  */
+.publicar label{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.publicar .form__input{
+    width: 100%;
+    font-weight: normal;
+    background-color: #ffffff;
+}
+
+.publicar .form__input:focus{
+    outline: none;
+    border-color: #111111;
+}
+
+.erro{
+    padding: 8px 12px;
+    background-color: #fdecea;
+    color: #b71c1c;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    font-size: 14px;
+}

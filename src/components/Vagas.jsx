@@ -6,7 +6,7 @@ const tiposDeVaga = [...new Set(vagaList.map((vaga) => vaga.modelo))]
 const areasDeVaga = [...new Set(vagaList.map((vaga) => vaga.area))]
 const locaisDeVaga = [...new Set(vagaList.map((vaga) => vaga.local))]
 
-// Quantas vagas aparecem em cada página
+// vagas aparecem em cada página
 const VAGAS_POR_PAGINA = 5
 
 
@@ -53,7 +53,7 @@ function Vagas() {
         return passaTipo && passaArea && passaLocal && passaBusca
     })
 
-    // Paginação: pega só o pedaço da lista que pertence à página atual
+    
     const totalPaginas = Math.max(1, Math.ceil(vagasFiltradas.length / VAGAS_POR_PAGINA))
     const inicio = (pagina - 1) * VAGAS_POR_PAGINA
     const vagasDaPagina = vagasFiltradas.slice(inicio, inicio + VAGAS_POR_PAGINA)

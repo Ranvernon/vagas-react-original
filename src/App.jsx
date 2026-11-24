@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import Login from './pages/Login'
 import VagaDetalhe from './pages/VagaDetalhe'
 import Page404 from './pages/Page404'
+import PublicarVaga from './pages/PublicarVaga'
 import './App.css'
 
 
@@ -13,6 +14,7 @@ function App() {
         <Route index element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/vaga/:id" element={<VagaDetalhe />} />
+        <Route path="/publicar" element={<PublicarVaga />} />
         <Route path="*" element={<Page404 />} />
     </Routes>
   )

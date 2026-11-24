@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Depoimentos from '../components/Depoimentos'
 import News from '../components/News'
 import Vagas from '../components/Vagas'
+import { Link } from 'react-router'
 
 
 function Home() {
@@ -16,7 +17,7 @@ function Home() {
       title="As melhores vagas em startups de tecnologia"
       subtitle="Encontre oportunidades reais em empresas curadas. Sem cadastro, sem barreiras"
       >
-        <button id="bt" className="btn cta">Publicar Vaga - $299</button>
+        <Link to="/publicar" id="bt" className="btn cta">Publicar Vaga - $299</Link>
       </ Hero>
 
       

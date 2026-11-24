@@ -1,11 +1,13 @@
+import { Link } from "react-router"
+
 function Footer() {
     return(
          <footer>
           <p>OpenBoard 2026 todos os direitos reservados</p>
 
           <nav>
-              <a href="">Entrar</a>
-              <a href="">Publicar Vaga</a>
+              <Link to="/">Entrar</Link>
+              <Link to="/publicar">Publicar Vaga</Link>
               <a href="">Sobre</a>
               <a href="">Privacidade</a>
           </nav>
