@@ -434,3 +434,73 @@ a.btn{
     border-radius: 6px;
     font-size: 14px;
 }
+
+/* ===== Login ===== */
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.login__card{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 380px;
+    padding: 32px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e3;
+    border-radius: 8px;
+}
+
+.login__logo{
+    text-align: center;
+}
+
+.login__subtitulo{
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.login__card label{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login__card .form__input{
+    width: 100%;
+    font-weight: normal;
+}
+
+.login__card .form__input:focus{
+    outline: none;
+    border-color: #111111;
+}
+
+/* ===== Página 404 ===== */
+.pagina404{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 120px 24px;
+    text-align: center;
+}
+
+.pagina404__numero{
+    font-size: 96px;
+    line-height: 1;
+}
+
+.pagina404__texto{
+    color: #666666;
+    font-size: 18px;
+}

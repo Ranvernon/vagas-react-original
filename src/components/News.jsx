@@ -10,7 +10,7 @@ function News() {
         e.preventDefault()
 
         if(!email.includes('@')) {
-            setError('Por favor, imsira um email valido');
+            setError('Por favor, insira um email valido');
             setSuccess('')
             return;
         } else {
